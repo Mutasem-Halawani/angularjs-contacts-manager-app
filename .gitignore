@@ -9,3 +9,5 @@ npm-debug.log
 templates.js
 .env
 *configFile.*
+*firebase*
+database.rules.json
