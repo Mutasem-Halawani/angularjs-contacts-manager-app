@@ -13,6 +13,7 @@ import del from 'del'
 import path from 'path'
 import child from 'child_process'
 import sourcemaps from 'gulp-sourcemaps'
+import gulpNgConfig from 'gulp-ng-config'
 
 const exec = child.exec
 const argv = yargs.argv
@@ -38,6 +39,12 @@ const paths = {
 }
 
 server.create()
+
+gulp.task('generate', function () {
+  gulp.src('configFile.json')
+    .pipe(gulpNgConfig('myApp.config'))
+    .pipe(gulp.dest('./src/app/common'))
+})
 
 gulp.task('clean', cb => del(paths.dist + '**/*', cb))
 
