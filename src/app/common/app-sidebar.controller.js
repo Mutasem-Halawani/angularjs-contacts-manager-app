@@ -15,7 +15,7 @@ function AppSidebarController () {
     },
     {
       label: 'Acquaintances',
-      icon: 'accessability'
+      icon: 'accessibility'
     },
     {
       label: 'Following',
