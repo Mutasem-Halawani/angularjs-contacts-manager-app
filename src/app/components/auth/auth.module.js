@@ -19,3 +19,23 @@ angular
       })
     firebase.initializeApp(config)
   })
+  .run(function ($transitions, $state, AuthService) {
+    $transitions.onStart({
+      to: function (state) {
+        return !!(state.data && state.data.requiredAuth)
+      }
+    }, function () {
+      return AuthService
+        .requireAuthentication()
+        .catch(function () {
+          return $state.target('auth.login')
+        })
+    })
+    $transitions.onStart({ // Redirect users to app if they logged in and try to go to auth and login
+      to: 'auth.*'
+    }, function () {
+      if (AuthService.isAuthenticated()) {
+        return $state.target('app')
+      }
+    })
+  })
