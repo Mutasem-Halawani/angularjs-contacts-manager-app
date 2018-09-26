@@ -12,10 +12,20 @@ function AuthService ($firebaseAuth) {
     return auth.$requireSignIn()
   }
 
+  function clearAuthData () {
+    authData = null
+  }
+
   this.register = function (user) {
     return auth
       .$createUserWithEmailAndPassword(user.email, user.password)
       .then(storeAuthData)
+  }
+
+  this.logout = function () {
+    return auth
+      .$signOut()
+      .then(clearAuthData)
   }
 
   this.login = function (user) {
