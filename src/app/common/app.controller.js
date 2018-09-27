@@ -3,7 +3,6 @@ function AppController (AuthService, $state) {
   ctrl.user = AuthService.getUser()
 
   ctrl.logout = function () {
-    console.log(ctrl.user)
     // logout AuthService
     AuthService.logout().then(function () {
       $state.go('auth.login')
