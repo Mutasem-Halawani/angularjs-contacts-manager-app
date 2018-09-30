@@ -19,6 +19,7 @@
         <input
           type="text"
           name="name"
+          length-check
           required="required"
           ng-change="$ctrl.updateContact();"
           ng-model-options="{
@@ -38,6 +39,7 @@
           </span>
         </label>
         <input
+          length-check
           type="email"
           name="email"
           ng-change="$ctrl.updateContact();"
@@ -55,6 +57,7 @@
           Job title
         </label>
         <input
+          length-check
           type="text"
           name="jobTitle"
           ng-change="$ctrl.updateContact();"
@@ -72,6 +75,7 @@
           Location
         </label>
         <input
+          length-check
           type="text"
           name="location"
           ng-model="$ctrl.contact.location">
@@ -85,6 +89,7 @@
             Facebook
           </label>
           <input
+            length-check
             type="text"
             name="facebook"
             ng-change="$ctrl.updateContact();"
@@ -102,6 +107,7 @@
             Github
           </label>
           <input
+            length-check
             type="text"
             name="github"
             ng-change="$ctrl.updateContact();"
@@ -119,6 +125,7 @@
             Twitter
           </label>
           <input
+            length-check
             type="text"
             name="twitter"
             ng-change="$ctrl.updateContact();"
@@ -136,6 +143,7 @@
             Linkedin
           </label>
           <input
+            length-check
             type="text"
             name="linkedin"
             ng-change="$ctrl.updateContact();"
