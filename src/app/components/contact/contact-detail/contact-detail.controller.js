@@ -24,6 +24,10 @@ function ContactDetailController () {
 			}
 		})
 	}
+	ctrl.tagChange = function (event) {
+		ctrl.contact.tag = event.tag
+		ctrl.updateContact() // update the contact when the tag changes - in firebase
+	}
 }
 
 angular
