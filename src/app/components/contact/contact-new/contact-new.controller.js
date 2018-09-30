@@ -1,4 +1,4 @@
-function ContactNewController () {
+function ContactNewController (ContactService) {
  var ctrl = this
  ctrl.$onInit = function () {
  	ctrl.contact = {
@@ -24,7 +24,8 @@ function ContactNewController () {
  			})
  	}
  }
+}
 
 angular
 	.module('components.contact')
-	.controller('ContactNewController', ContactNewController)
+  .controller('ContactNewController', ContactNewController)
