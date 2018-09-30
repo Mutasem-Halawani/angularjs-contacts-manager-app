@@ -1,6 +1,7 @@
 var contacts = {
 	bindings: {
-		contacts: '<' // Given from the ui router
+		contacts: '<', // Given from the ui router
+		filter: '<'
 	},
 	templateUrl: './contacts.html',
 	controller: 'ContactsController'
@@ -13,12 +14,20 @@ angular
 		$stateProvider
 			.state('contacts', {
 				parent: 'app',
-				url: '/contacts',
+				url: '/contacts?filter',
 				component: 'contacts',
+				params: {
+					filter: {
+						value: 'none'
+					}
+				},
 				resolve: {
 					contacts: function (ContactService) {
 						// $loaded() means the list is ready to be displayed in the DOM
 						return ContactService.getContactList().$loaded()
+					},
+					filter: function ($transition$) {
+						return $transition$.params()
 					}
 				}
 			})
