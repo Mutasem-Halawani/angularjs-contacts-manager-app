@@ -10,6 +10,20 @@ function ContactDetailController () {
 			}
 		})
 	}
+	ctrl.updateContact = function () {
+		ctrl.onUpdate({ // pushing an event up to the parent
+			$event: {
+				contact: ctrl.contact
+			}
+		})
+	}
+	ctrl.deleteContact = function () {
+		ctrl.onDelete({ // pushing an event up to the parent
+			$event: {
+				contact: ctrl.contact
+			}
+		})
+	}
 }
 
 angular

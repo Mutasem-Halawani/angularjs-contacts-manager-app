@@ -2,7 +2,9 @@ var contactDetail = {
 	// add bindings - stateless components have an input and an output
 	bindings: {
 		contact: '<',
-		onSave: '&'
+		onSave: '&',
+		onUpdate: '&',
+		onDelete: '&'
 	},
 	templateUrl: './contact-detail.html',
 	controller: 'ContactDetailController'
