@@ -10,4 +10,8 @@ templates.js
 .env
 *configFile.*
 *firebase*
+<<<<<<< HEAD
 database.rules.json
+=======
+database.rules.json
+>>>>>>> bb61f591b2de833ebcbbf111bfb7bced3a565aa8

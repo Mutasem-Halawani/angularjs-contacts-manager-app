@@ -1,6 +1,11 @@
 function ContactNewController (ContactService, $state) {
+<<<<<<< HEAD
   var ctrl = this
   ctrl.$onInit = function () {
+=======
+ var ctrl = this
+ ctrl.$onInit = function () {
+>>>>>>> bb61f591b2de833ebcbbf111bfb7bced3a565aa8
  	ctrl.contact = {
  		name: '',
  		email: '',
@@ -25,9 +30,17 @@ function ContactNewController (ContactService, $state) {
  				})
  			})
  	}
+<<<<<<< HEAD
   }
 }
 
 angular
   .module('components.contact')
+=======
+ }
+}
+
+angular
+	.module('components.contact')
+>>>>>>> bb61f591b2de833ebcbbf111bfb7bced3a565aa8
   .controller('ContactNewController', ContactNewController)
